@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Button, Container, Card, Col, Modal, Form } from 'react-bootstrap';
+import { Button, Container, Card, Col, Modal, Form, CardGroup } from 'react-bootstrap';
 
 export default function Users() {
 
@@ -80,25 +80,30 @@ export default function Users() {
                     </Button>
                 </Modal.Footer>
             </Modal> : null}
-            {
-                users.map((user, index) => {
-                    console.log(user);
-                    return (
-                        <Col xs={12} md={4} key={index}>
-                            <Card style={{ width: '18rem' }}>
-                                {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-                                <Card.Body style={{ color: 'black' }}>
-                                    <Card.Title>{user.name}</Card.Title>
-                                    <Card.Text>{user.email}</Card.Text>
-                                    <Button variant="primary" onClick={() => handleShow(index)}>Edit</Button>
-                                    <Button variant="primary" onClick={() => deleteUser(index)}>Delete</Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
+            <h1>List of Users</h1>
+
+            <CardGroup>
+                {
+                    users.map((user, index) => {
+                        console.log(user);
+                        return (
+                            <Col xs={12} md={4} key={index}>
+                                <Card style={{ 'padding': '10px', 'marginRight': '10px', 'marginBottom': '10px' }}>
+                                    {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                                    <Card.Body style={{ color: 'black' }}>
+                                        <Card.Title>{user.name}</Card.Title>
+                                        <Card.Text>{user.email}</Card.Text>
+                                        <Button style={{ 'marginRight': '10px' }} variant="primary" onClick={() => handleShow(index)}>Edit</Button>
+                                        <Button variant="primary" onClick={() => deleteUser(index)}>Delete</Button>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        )
+                    }
                     )
                 }
-                )
-            }
+            </CardGroup>
+
         </Container>
     )
 }
