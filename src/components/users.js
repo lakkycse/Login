@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { useHistory } from 'react-router';
 
 import { Button, Container, Card, Col, Modal, Form } from 'react-bootstrap';
 
@@ -59,12 +58,12 @@ export default function Users() {
                 <Modal.Body>
                     <Form>
                         <Form.Group className="mb-3" controlId="formGroupEmail">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" name="name" value={values.name} onChange={handleChange} />
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control type="text" placeholder="Enter Name" name="name" value={values.name} onChange={handleChange} />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formGroupPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" name="email" value={values.email} onChange={handleChange} />
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control type="email" placeholder="Enter Email" name="email" value={values.email} onChange={handleChange} />
                         </Form.Group>
                     </Form>
 
